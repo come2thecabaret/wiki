@@ -1,2 +1,10 @@
-<h1>Welcome to Blocpedia</h1>
-<p>blah blah blah</p>
+<div class="jumbotron text-center">
+  <h1 class="display-3">Blocpedia</h1>
+  <p class="lead">This is a line about the app. This is a line about the app. This is a line about the app.</p>
+  <hr class="m-y-2">
+  <p>Signing up is easy and best of all, free!</p>
+  <p class="lead">
+     <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success btn-lg' %>
+     <p>For existing users, <%= link_to "Sign In", new_user_session_path %> here.</p>
+  </p>
+</div>
