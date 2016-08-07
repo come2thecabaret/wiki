@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   attr_accessor :login
+  has_many :articles
 
   validates :username,
   :presence => true,
