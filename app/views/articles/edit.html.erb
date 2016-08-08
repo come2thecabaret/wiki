@@ -1,2 +1,15 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<h1>Edit Article</h1>
+
+<%= form_for @article do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.label :private %>
+  <%= f.check_box :private %>
+
+
+  <%= f.submit "Save" %>
+<% end %>
