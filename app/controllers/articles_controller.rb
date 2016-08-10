@@ -12,10 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new
-    @article.title = params[:article][:title]
-    @article.body = params[:article][:body]
-    @article.private = params[:article][:private]
+    @article = Article.new(article_params)
 
     if @article.save
       flash[:notice] = "Article was saved successfully."
@@ -32,9 +29,6 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.title = params[:article][:title]
-    @article.body = params[:article][:body]
-    @article.private = params[:article][:private]
 
     if @article.save
       flash[:notice] = "Article was updated successfully."
@@ -55,5 +49,11 @@ class ArticlesController < ApplicationController
       flash.now[:alert] = "There was an error deleting the article."
       render :show
     end
-end
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :body, :private)
+  end
 end
