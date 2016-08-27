@@ -22,6 +22,7 @@ gem 'pry'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug'
