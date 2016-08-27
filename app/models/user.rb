@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   attr_accessor :login
   has_many :articles
+  enum role: [:standard, :premium, :admin]
 
   validates :username,
   :presence => true,
